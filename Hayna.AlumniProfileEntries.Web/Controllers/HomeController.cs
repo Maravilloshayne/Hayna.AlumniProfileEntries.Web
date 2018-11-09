@@ -85,11 +85,45 @@ namespace Hayna.AlumniProfileEntries.Web.Controllers
                 this._context.SaveChanges();
             }
 
-            return RedirectPermanent("~/posts/index");
-}
+            var user = this._context.Users.FirstOrDefault();
+            if (user == null)
+            {
+                var admin = new User()
+                {
+                    Id = Guid.Parse("b2e5a4fc-ca4e-4d3f-b9ac-d8a088cd6401"),
+                    EmailAddress = "HaynaMallo@gmail.com",
+                    FirstName = "Hayna",
+                    LastName = "Mallo",
+                    Gender = Infrastructures.Data.Enums.Gender.Male,
+                    LoginStatus = Infrastructures.Data.Enums.LoginStatus.Active,
+                    LoginTrials = 0,
+                    RegistrationCode = RandomString(6),
+                    Password = BCrypt.BCryptHelper.HashPassword("Accord605", BCrypt.BCryptHelper.GenerateSalt(8))
+                };
+                this._context.Users.Add(admin);
+                this._context.SaveChanges();
+                this._context.UserRoles.Add(new UserRole()
+                {
+                    Id = Guid.Parse("b2e5a4fc-ca4e-4d3f-b9ac-d8a088cd6401"),
+                    Role = Infrastructures.Data.Enums.Role.Admin,
+                    UserId = admin.Id
+                });
+                this._context.SaveChanges();
+            }
+            return RedirectToAction("index");
+            //return RedirectPermanent("~/posts/index");
+        }
+        private Random random = new Random();
+        private string RandomString(int length)
+        {
+            const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
 
 
-[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

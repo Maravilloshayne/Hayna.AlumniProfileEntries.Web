@@ -11,6 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Hayna.AlumniProfileEntries.Web.Infrastructures.Data.Helpers;
+using Hayna.AlumniProfileEntries.Web.Infrastructures.Data.Security;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Hayna.AlumniProfileEntries.Web
 {
@@ -26,6 +29,21 @@ namespace Hayna.AlumniProfileEntries.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+           .AddCookie(options =>
+           {
+               options.Cookie.Expiration = TimeSpan.FromDays(1);
+               options.Cookie.MaxAge = TimeSpan.FromDays(1);
+               options.Cookie.Name = "WendhelAton.FAQ.WebSite";
+           });
+
+
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -34,6 +52,22 @@ namespace Hayna.AlumniProfileEntries.Web
             });
 
             services.AddDbContext<DefaultDbContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultDbContextMySQL"), m => m.MigrationsAssembly("Hayna.AlumniProfileEntries.Web")));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IAuthorizationHandler, AuthorizeAdminRequirementHandler>();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("SignedIn", policy => policy.RequireAuthenticatedUser());
+                options.AddPolicy("AuthorizeAdmin", policy => policy.Requirements.Add(new AuthorizeAdminRequirement()));
+            });
+
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(1);
+            });
+
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

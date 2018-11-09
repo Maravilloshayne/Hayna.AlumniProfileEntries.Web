@@ -34,3 +34,16 @@ C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfile
 C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Posts\Index.g.cshtml.cs
 C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Areas\Manage\Views\Posts\Index.g.cshtml.cs
 C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Areas\Manage\Views\Posts\Create.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Areas\Manage\Views\Posts\UpdateTitle.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Areas\Manage\Views\Posts\Thumbnail.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Areas\Manage\Views\Posts\UpdateContent.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Areas\Manage\Views\Posts\Banner.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Posts\Post.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Account\Verify.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Account\ForgotPassword.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Account\ChangePassword.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Account\UpdateProfile.g.cshtml.cs
+C:\Users\Shayne Maravillo\Desktop\Hayna.AlumniProfileEntries\Hayna.AlumniProfileEntries.Web\obj\Debug\netcoreapp2.1\Razor\Views\Account\UpdateProfileImage.g.cshtml.cs

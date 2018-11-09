@@ -1,0 +1,7 @@
+﻿@model Hayna.AlumniProfileEntries.Web.VIewModels.PostViewModel
+@{
+    ViewData["Title"] = "Post";
+    Layout = "~/Views/Shared/_BlogWithWidgets.cshtml";
+}
+<h2>@Model.Company</h2>
+@Html.Raw(Model.Description)
